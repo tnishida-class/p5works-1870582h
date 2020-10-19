@@ -1,21 +1,19 @@
-// ギリシャ国旗
-function setup() {
-  const blue = color(0, 51, 160);
-  createCanvas(270, 180);
-  // noStroke();
-  background(255);
+//ギリシャ国旗
+function setup(){
+  createCanvas(270,180);
+  for(let i=0;i<5;i++){
+  strokeWeight(20);
+  stroke(44,89,171);
+  let x=i*40
+  line(0,x+10,270,x+10);
+//ここまでで横線
 
-  let d = height / 9; // 縞1本の太さ
-
-  for(let i = 0; i < 9; i++){
-    // BLANK[1] (hint: 縞の色を交互に変えるには2で割った余りを使おう)
-    rect(0, i * d, width, (i + 1) * d);
+ fill(44,89,171);
+ rect(0,0,90,90);
+ stroke(255);
+ strokeCap(PROJECT);
+ line(0,50,90,50);
+ line(50,0,50,90);
+//ここまでで十字架
   }
-
-  fill(blue);
-  let size = d * 5;
-  rect(0, 0, size, size);
-
-  fill(255);
-  // BLANK[2] (hint: 白い十字を描くには rect を二つ描こう)
 }

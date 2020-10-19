@@ -1,36 +1,37 @@
 // ダーツ
-let cx, cy, maxR;
-
-function setup() {
-  let green = color(0, 255, 0);
-  let red = color(255, 0, 0);
-  let black = color(0);
-  let cream = color(242, 212, 147);
-  createCanvas(400, 400);
-  background(255);
+function setup(){
+  createCanvas(200,200);
   stroke(255);
-  strokeWeight(3);
+ fill(0);
+ ellipse(100,100,200);
+//ここまでで黒円
 
-  cx = width / 2;
-  cy = height / 2;
-  maxR = min(width, height);
+  for(let i=0;i<20;i++){
+  if(i%2==0){
+  fill(0,255,0);}
+  else{fill(255,0,0);}
+  arc(100,100,150,150,PI*i*0.1,PI*(i+1)*0.1);
+//ここまでで①赤緑
 
-  drawCircle(black, maxR);
-  drawArcs(green, red, maxR * 0.8);
-  // BLANK[1] (hint: drawArcs x 3, drawCircle x 1)
-  drawCircle(red, maxR * 0.05);
-}
+  if(i%2==0){fill(242,215,141);}
+  else{fill(0);}
+ arc(100,100,140,140,PI*i*0.1,PI*(i+1)*0.1);
+//ここまでで➀黄黒
 
-function drawCircle(c, r){
-  fill(c);
-  ellipse(cx, cy, r, r);
-}
+  if(i%2==0){
+  fill(0,255,0);}
+  else{fill(255,0,0);}
+  arc(100,100,100,100,PI*i*0.1,PI*(i+1)*0.1)
+//ここまでで②赤緑
 
-function drawArcs(c1, c2, r) {
-  for (let i = 0; i < 20; i++) {
-    let start = TWO_PI / 20 * i;
-    let stop = TWO_PI / 20 * (i + 1);
-    fill(i % 2 == 0 ? c1 : c2);
-    arc(cx, cy, r, r, start, stop, PIE);
+  if(i%2==0){fill(242,215,141);}
+  else{fill(0);}
+ arc(100,100,90,90,PI*i*0.1,PI*(i+1)*0.1);
+//ここまでで②黄黒
+
+　fill(0,255,0);
+  ellipse(100,100,30);
+  fill(255,0,0);
+  ellipse(100,100,15);
   }
 }
